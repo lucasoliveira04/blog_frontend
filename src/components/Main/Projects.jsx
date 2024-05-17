@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useState, useEffect } from "react";
 
 import GithubDesktopPythonHomeImg from "../../public/image/github_repositorio_viewer/ImgS.png";
@@ -14,7 +16,7 @@ const ProjectCard = ({
   createdAt,
   urlGithub,
   typeProject,
-  imgUrl, 
+  imgUrl,
 }) => {
   const formatDate = (dateString) => {
     const options = {
@@ -31,7 +33,18 @@ const ProjectCard = ({
 
   return (
     <div className="card mb-3">
-      <img src={imgUrl} className="card-img-top" alt={getImageAltTextByTitle(title)} />
+      {id === 11 ? (
+        <Carousel>
+          <div>
+            <img src={GithubDesktopPythonHomeImg} alt={getImageAltTextByTitle(title)} />
+          </div>
+          <div>
+            <img src={GithubDesktopPythonPesquisarUsernameImg} alt={getImageAltTextByTitle(title)} />
+          </div>
+        </Carousel>
+      ) : (
+        <img src={imgUrl} className="card-img-top" alt={getImageAltTextByTitle(title)} />
+      )}
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">{description}</p>
@@ -41,7 +54,7 @@ const ProjectCard = ({
           </small>
         </p>
         <p className="card-text">
-          <small className="text-muted ">
+          <small className="text-muted">
             {typeProject}
           </small>
         </p>
@@ -61,7 +74,7 @@ export const MainProjectCard = () => {
   const [loading, setLoading] = useState(true);
 
   const projectImageMap = {
-    11: GithubDesktopPythonHomeImg,
+    11: [GithubDesktopPythonHomeImg, GithubDesktopPythonPesquisarUsernameImg],
     12: loginImg,
   }
 
@@ -82,7 +95,6 @@ export const MainProjectCard = () => {
     return (
       <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
         <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
         </div>
       </div>
     );
@@ -102,7 +114,6 @@ export const MainProjectCard = () => {
           typeProject={project.typeProject}
           createdAt={project.createdAt}
           imgUrl={projectImageMap[project.id]}
-
         />
       ))}
     </div>

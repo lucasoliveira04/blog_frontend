@@ -1,4 +1,3 @@
-import { FooterComponent } from "../../components/Footer/FooterC";
 import { MainProjectCard } from "../../components/Main/Projects";
 import { HeaderC } from "../../components/header/HeaderC";
 
@@ -17,7 +16,6 @@ export const HomePageUser = () => {
             
         </div>
       </div>
-      <FooterComponent/>
     </div>
   );
 };

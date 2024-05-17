@@ -3,4 +3,7 @@ body{
     padding: 0%;
     box-sizing: border-box;
     overflow: hidden;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
 }
