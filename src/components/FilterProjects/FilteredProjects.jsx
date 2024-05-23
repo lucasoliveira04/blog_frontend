@@ -18,6 +18,7 @@ const FilterOptions = ({ selectedLanguage, onLanguageChange }) => {
                 <option value="all">All Languages</option>
                 <option value="Python">Python</option>
                 <option value="JavaScript">JavaScript</option>
+                <option value="Java">Java</option>
             </select>
         </div>
     );

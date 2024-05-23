@@ -1,14 +1,21 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import FilterOptions from "../../components/FilterProjects/FilteredProjects";
 import { MainProjectCard } from "../../components/Main/Projects";
 import { HeaderC } from "../../components/header/HeaderC";
 import { ProjectContext } from "../../context/GetDataApi/getDataApi";
 import { FilteredTypeProject } from "../../components/FilterProjects/FilteredTypeProject";
+import { FilteredProjectByFramework } from "../../components/FilterProjects/FilteredProjectByFramework";
 
 export const HomePageUser = () => {
-  const { fetchProjectByLanguage, fetchProjectByType} = useContext(ProjectContext);
+  
+  useEffect(() => {
+    document.title = "Pagina inicial"
+  }, [])
+
+  const { fetchProjectByLanguage, fetchProjectByType, fetchProjectByFramework} = useContext(ProjectContext);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [selectedTypeProject, setSelectedTypeProject] = useState("");
+  const [selectedFramework, setSelectedFramework] = useState("");
   
   const handleLanguageChange = (languageName) => {
     setSelectedLanguage(languageName);
@@ -23,6 +30,14 @@ export const HomePageUser = () => {
       fetchProjectByType(typeProject);
     }
   }
+
+  const handleFrameworkChange = (frameworkName) => {
+    setSelectedFramework(frameworkName);
+    if (frameworkName) {
+      fetchProjectByFramework(frameworkName);
+    }
+  }
+
   return (
     <div className="cont">
       <HeaderC />
@@ -39,6 +54,13 @@ export const HomePageUser = () => {
               <FilteredTypeProject 
                 selectTypeProject={selectedTypeProject}
                 onTypeProject={handleTypeProjectChange}
+              />
+            </div>
+
+            <div>
+              <FilteredProjectByFramework 
+                selectedFrameworks={selectedFramework}
+                onFrameworkChange={handleFrameworkChange}
               />
             </div>
           </div>

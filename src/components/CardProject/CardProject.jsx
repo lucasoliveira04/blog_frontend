@@ -97,13 +97,6 @@ const Styles = {
     overflow: "hidden",
     transition: "transform 0.2s ease-in-out",
   },
-  cardImg: {
-    width: "100%",
-    height: "auto",
-    objectFit: "cover",
-    borderTopLeftRadius: "8px",
-    borderTopRightRadius: "8px",
-  },
   cardBody: {
     padding: "20px",
   },
@@ -113,5 +106,12 @@ const Styles = {
     alignItems: "center",
     flexDirection: "column",
     height: "100vh",
+  },
+  cardImgStyle: {
+    width: "100%",
+    height: "auto",
+    objectFit: "cover",
+    borderTopLeftRadius: "8px",
+    borderTopRightRadius: "8px",
   }
 };
