@@ -1,9 +1,12 @@
+import ProjectProvider from './context/GetDataApi/getDataApi'
 import { Routers } from './routers'
 
 function App() {
 
   return (
-    <Routers/>
+    <ProjectProvider>
+      <Routers/>
+    </ProjectProvider>
   )
 }
 

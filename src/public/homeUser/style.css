@@ -12,7 +12,7 @@ footer {
     height: 1vh;
 }
 
-.c2{
+.c2 {
     width: 120%;
     overflow-y: scroll;
     height: 90vh;
@@ -29,4 +29,22 @@ footer {
 .card-body {
     display: flex;
     flex-direction: column;
+}
+
+.c1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.filteredProjectsSelect {
+    display: flex;
+    gap: 20px;
 }
