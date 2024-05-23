@@ -29,39 +29,12 @@ export const CardProject = () => {
     return new Date(dateString).toLocaleDateString("pt-BR", options);
   }
 
-  // Estilos para o container dos cards
-  const containerStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  };
-
-  // Estilos para cada card
-  const cardStyle = {
-    marginBottom: "20px",
-    maxWidth: "900px",
-    borderRadius: "8px",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    overflow: "hidden",
-    transition: "transform 0.2s ease-in-out",
-  };
-
-  // Estilos para a imagem do card
-  const cardImgStyle = {
-    width: "100%",
-    height: "auto",
-    objectFit: "cover",
-    borderTopLeftRadius: "8px",
-    borderTopRightRadius: "8px",
-  };
-
-  // Estilos para o conteúdo do card
-  const cardBodyStyle = {
-    padding: "20px",
-  };
-
   if (loading) {
-    return <SpinnerLoading />;
+    return (
+      <div style={Styles.centralizarDiv}>
+        <SpinnerLoading />
+      </div>
+  );
   }
 
   if (error) {
@@ -69,16 +42,16 @@ export const CardProject = () => {
   }
 
   return (
-    <div style={containerStyle}>
+    <div style={Styles.containerStyle}>
       {projects.map((project) => (
-        <div key={project.id} style={cardStyle}>
+        <div key={project.id} style={Styles.cardStyle}>
           {project.id === 11 ? (
             <Carousel>
               <div>
-                <img src={GithubDesktopPythonHomeImg} alt={project.title} style={cardImgStyle} />
+                <img src={GithubDesktopPythonHomeImg} alt={project.title} style={Styles.cardImgStyle} />
               </div>
               <div>
-                <img src={GithubDesktopPythonPesquisarUsernameImg} alt={project.title} style={cardImgStyle} />
+                <img src={GithubDesktopPythonPesquisarUsernameImg} alt={project.title} style={Styles.cardImgStyle} />
               </div>
             </Carousel>
           ) : (
@@ -86,10 +59,10 @@ export const CardProject = () => {
               src={projectImageMap[project.id]}
               className="card-img-top"
               alt={getImageAltTextByTitle(project.title)}
-              style={cardImgStyle}
+              style={Styles.cardImgStyle}
             />
           )}
-          <div className="card h-100" style={cardBodyStyle}>
+          <div className="card h-100" style={Styles.cardBodyStyle}>
             <div className="card-body">
               <h5 className="card-title">{project.title}</h5>
               <p className="card-text">{project.description}</p>
@@ -107,4 +80,38 @@ export const CardProject = () => {
       ))}
     </div>
   );
+  
+};
+
+const Styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  card: {
+    marginBottom: "20px",
+    maxWidth: "900px",
+    borderRadius: "8px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    overflow: "hidden",
+    transition: "transform 0.2s ease-in-out",
+  },
+  cardImg: {
+    width: "100%",
+    height: "auto",
+    objectFit: "cover",
+    borderTopLeftRadius: "8px",
+    borderTopRightRadius: "8px",
+  },
+  cardBody: {
+    padding: "20px",
+  },
+  centralizarDiv: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    height: "100vh",
+  }
 };

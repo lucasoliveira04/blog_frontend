@@ -9,7 +9,7 @@ export const HomePageUser = () => {
   const { fetchProjectByLanguage, fetchProjectByType} = useContext(ProjectContext);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [selectedTypeProject, setSelectedTypeProject] = useState("");
-
+  
   const handleLanguageChange = (languageName) => {
     setSelectedLanguage(languageName);
     if (languageName) {
@@ -23,7 +23,6 @@ export const HomePageUser = () => {
       fetchProjectByType(typeProject);
     }
   }
-
   return (
     <div className="cont">
       <HeaderC />
