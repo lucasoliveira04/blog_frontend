@@ -5,6 +5,11 @@ import { HeaderC } from "../../components/header/HeaderC";
 import { ProjectContext } from "../../context/GetDataApi/getDataApi";
 import { FilteredTypeProject } from "../../components/FilterProjects/FilteredTypeProject";
 import { FilteredProjectByFramework } from "../../components/FilterProjects/FilteredProjectByFramework";
+import { ButtonComponent } from "../../components/buttons/ButtonComponent";
+
+import profile from "../../public/image/perfil.png"
+import aboutMe from "../../public/image/bio.png"
+import contacts from "../../public/image/livro-de-enderecos.png"
 
 export const HomePageUser = () => {
   
@@ -70,7 +75,27 @@ export const HomePageUser = () => {
         <div className="c2">
           <MainProjectCard />
         </div>
-        <div className="c3"></div>
+        <div className="c3">
+          <div className="btnSingle">
+            <ButtonComponent 
+              styleBootstrap={"success"}
+              text={"Profile"}
+              linkImg={profile}
+            />
+          </div>
+          <div className="btnMultiplayer">
+            <ButtonComponent 
+              styleBootstrap={"primary"}
+              text={"About me"}
+              linkImg={aboutMe}
+            />
+            <ButtonComponent 
+              styleBootstrap={"warning"}
+              text={"Contacts"}
+              linkImg={contacts}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
