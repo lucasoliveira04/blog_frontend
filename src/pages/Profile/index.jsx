@@ -1,3 +1,4 @@
+import { FooterComponent } from "../../components/Footer";
 import "../../public/profile/profile.css";
 
 export const ProfilePage = () => {
@@ -15,7 +16,7 @@ export const ProfilePage = () => {
                 ABOUT ME IS HERE
             </div>
             <div className="footer" id="footer">
-                FOOTER IS HERE
+                <FooterComponent/>
             </div>
         </div>
     );

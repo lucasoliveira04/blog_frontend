@@ -4,14 +4,6 @@
     height: 80vh;
 }
 
-footer {
-    display: flex;
-    justify-content: center;
-    border: 1px solid rgb(63, 13, 156);
-    max-width: 100%;
-    height: 1vh;
-}
-
 .letter{
     transition: color 0.3s ease;
     display: inline-block;

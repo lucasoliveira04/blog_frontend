@@ -38,8 +38,82 @@
 }
 
 .footer {
-    border: 1px solid red;
+    border: 1px solid rgb(0, 0, 0);
     grid-area: footer;
     display: flex;
     justify-content: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.r1 {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.r1 button {
+    width: 150px;
+    height: 50px;
+    font-weight: 900;
+    margin-top: 20px;
+}
+
+h4 {
+    text-align: center;
+    font-weight: 900
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+}
+
+.feedback-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.feedback-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #343a40;
+}
+
+.feedback-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.feedback-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.feedback-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-button:hover {
+    background-color: #0056b3;
 }
