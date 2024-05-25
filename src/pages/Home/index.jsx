@@ -10,6 +10,7 @@ import { ButtonComponent } from "../../components/buttons/ButtonComponent";
 import profile from "../../public/image/perfil.png"
 import aboutMe from "../../public/image/bio.png"
 import contacts from "../../public/image/livro-de-enderecos.png"
+import { Link } from "react-router-dom";
 
 export const HomePageUser = () => {
   
@@ -77,23 +78,31 @@ export const HomePageUser = () => {
         </div>
         <div className="c3">
           <div className="btnSingle">
+            <Link to="/profile">
             <ButtonComponent 
               styleBootstrap={"success"}
               text={"Profile"}
               linkImg={profile}
             />
+            </Link>
           </div>
           <div className="btnMultiplayer">
+            <Link path="/about-me">
             <ButtonComponent 
               styleBootstrap={"primary"}
               text={"About me"}
               linkImg={aboutMe}
             />
+            </Link>
+
+            <Link to="/contacts">
             <ButtonComponent 
               styleBootstrap={"warning"}
               text={"Contacts"}
               linkImg={contacts}
             />
+            </Link>
+            
           </div>
         </div>
       </div>

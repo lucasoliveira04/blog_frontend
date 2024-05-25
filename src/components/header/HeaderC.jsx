@@ -20,7 +20,7 @@ export const HeaderC = () => {
     const images = [
         { link: Github, name: "github", width, height, url: "https://github.com/lucasoliveira04" },
         { link: Gmail, name: "gmail", width, height, url: "mailto:camposdlucasoli@gmail.com" },
-        { link: Linkedin, name: "linkedin", width, height, url: "https://www.linkedin.com/in/seu-perfil/" },
+        { link: Linkedin, name: "linkedin", width, height, url: "https://www.linkedin.com/in/lucas-oliveira-08334a264/" },
         { link: Instagram, name: "instagram", width, height, url: "https://www.instagram.com/lucasoliveira.04_/" },
     ];
 
