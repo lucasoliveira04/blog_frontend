@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import React from 'react';
 import "../../public/homeUser/style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -28,9 +28,15 @@ export const HeaderC = () => {
         window.open(url, "_blank");
     };
 
+    const name = "Lucas Oliveira";
+
     return (
         <header className="header d-flex align-items-center justify-content-around bg-black" style={{ height: "10vh" }}>
-            <h1 className="fw-bold" style={{ cursor: "pointer", fontSize: "5rem", fontFamily: 'Roboto, sans-serif', fontWeight: "900", color: "white" }}>Lucas Oliveira</h1>
+            <h1 className="name-animation fw-bold" style={{ cursor: "pointer", fontSize: "5rem", fontFamily: 'Roboto, sans-serif', fontWeight: "900", color: "white" }}>
+                {name.split('').map((letter, index) => (
+                    <span key={index} className="letter">{letter}</span>
+                ))}
+            </h1>
             <span className="span d-flex">
                 {images.map((image, index) => (
                     <Imgs key={index} name={image.name} link={image.link} width={image.width} height={image.height} onClick={() => handleClick(image.url)} />
@@ -38,4 +44,4 @@ export const HeaderC = () => {
             </span>
         </header>
     )
-}
+};
