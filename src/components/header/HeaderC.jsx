@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import "../../public/homeUser/style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -28,13 +28,17 @@ export const HeaderC = () => {
         window.open(url, "_blank");
     };
 
-    const name = "Lucas Oliveira";
+    const firstName = "Lucas ";
+    const lastName = "Oliveira";
 
     return (
         <header className="header d-flex align-items-center justify-content-around bg-black" style={{ height: "10vh" }}>
             <h1 className="name-animation fw-bold" style={{ cursor: "pointer", fontSize: "5rem", fontFamily: 'Roboto, sans-serif', fontWeight: "900", color: "white" }}>
-                {name.split('').map((letter, index) => (
-                    <span key={index} className="letter">{letter}</span>
+                {firstName.split('').map((letter, index) => (
+                    <span key={index} className={`letter ${index === firstName.length - 1 ? 'last-letter' : ''}`}>{letter}</span>
+                ))}
+                {lastName.split('').map((letter, index) => (
+                    <span key={index + firstName.length} className="letter">{letter}</span>
                 ))}
             </h1>
             <span className="span d-flex">
@@ -43,5 +47,5 @@ export const HeaderC = () => {
                 ))}
             </span>
         </header>
-    )
+    );
 };

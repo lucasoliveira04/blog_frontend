@@ -1,10 +1,29 @@
+import styled from 'styled-components';
+
+/* eslint-disable react/prop-types */
 export const ButtonComponent = ({
     styleBootstrap, text, linkImg
 }) => {
-    return(
-        <button className={`btn btn-${styleBootstrap}`}>
-            <img src={linkImg} alt="" width={100} height={100} style={{display: "flex", flexDirection: "column"}}/>
-            <p className="fw-bold">{text}</p>
-        </button>
+    return (
+        <StyledButton className={`btn btn-${styleBootstrap}`}>
+            <StyledImage src={linkImg} alt="" />
+            <p className="fw-bold font-shadow-sm text-light">{text}</p>
+        </StyledButton>
     )
 }
+
+const StyledButton = styled.button`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+`;
+
+const StyledImage = styled.img`
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease;
+`;

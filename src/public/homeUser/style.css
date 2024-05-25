@@ -12,6 +12,27 @@ footer {
     height: 1vh;
 }
 
+.letter{
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.letter:hover{
+    color: black;
+}
+
+.last-letter{
+    margin-left: 10px;
+}
+
+.header img {
+    transition: transform 0.3s ease;
+}
+
+.header img:hover {
+    transform: scale(1.1);
+}
+
 .c2 {
     width: 100%;
     overflow-y: scroll;
