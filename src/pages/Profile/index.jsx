@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { FooterComponent } from "../../components/Footer";
 import "../../public/profile/profile.css";
 
 export const ProfilePage = () => {
+    useEffect(() => {
+        document.title = "Perfil"
+      }, [])
+
     return (
         <div className="container-fluid">
             <div className="modal-group-profile-and-contacts">
